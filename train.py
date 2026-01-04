@@ -20,8 +20,6 @@ parser.add_argument('--epochs', type=int, default=5, help='Number of epochs for 
 parser.add_argument('--gpu', action='store_true', help='Use GPU for training if available')
 args = parser.parse_args()
 
-
-
 # Data directories
 train_dir = args.data_dir + '/train'
 valid_dir = args.data_dir + '/valid'
@@ -108,7 +106,6 @@ for epoch in range(args.epochs):
         
         training_loss += loss.item() # Accumulate the loss
         
-
     model.eval()
     valid_loss = 0
     accuracy = 0
@@ -144,4 +141,3 @@ checkpoint = {
 
 torch.save(checkpoint, args.save_dir + '/checkpoint.pth')
 print("Checkpoint saved to %s/checkpoint.pth" % args.save_dir)
-
