@@ -17,7 +17,6 @@ parser.add_argument('--category_name', type=str, help='JSON file for category na
 parser.add_argument('--gpu', action='store_true', help='use GPU, if available') # Use GPU if available
 args = parser.parse_args()
 
-
 def load_checkpoint(filepath):
     
     checkpoint = torch.load(filepath)
